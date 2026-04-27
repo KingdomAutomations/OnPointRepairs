@@ -21,7 +21,7 @@ $$('.faq-q').forEach((btn) => btn.addEventListener('click', () => btn.closest('.
 const year = $('[data-year]');
 if (year) year.textContent = new Date().getFullYear();
 const sticky = $('.sticky-call');
-const mobileViewport = window.matchMedia('(max-width: 1120px)');
+const mobileViewport = window.matchMedia('(max-width: 980px)');
 const updatePrimaryCtas = () => {
   const pastFold = window.scrollY > 520;
   const showSticky = pastFold && mobileViewport.matches;
