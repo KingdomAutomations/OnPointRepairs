@@ -134,6 +134,16 @@ function openServiceDetail(target, shouldScroll = false) {
 }
 if (serviceDetails.length) {
   serviceDetails.forEach((item) => {
+    const panel = $('.service-detail-panel', item);
+    if (panel && !$('.service-panel-next', panel)) {
+      const next = document.createElement('div');
+      next.className = 'service-panel-next';
+      next.innerHTML = '<a class="btn secondary service-panel-book" href="contact.html#booking-calendar">Continue to Booking</a>';
+      panel.appendChild(next);
+    }
+  });
+
+  serviceDetails.forEach((item) => {
     const button = $('.service-detail-toggle', item);
     button?.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
