@@ -38,7 +38,5 @@ body.show-nav-cta .nav-cta{opacity:1;visibility:visible;transform:translateY(0);
 .service-detail-price{margin:20px 0 0;border:1px solid rgba(255,225,45,.3);border-radius:18px;padding:16px 18px;background:linear-gradient(135deg,rgba(255,225,45,.13),rgba(255,255,255,.045));display:flex;align-items:center;justify-content:space-between;gap:16px}
 .service-detail-price span{color:#e8edf3;font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:12px}
 .service-detail-price strong{color:var(--yellow);font-weight:1000;font-size:18px;line-height:1.25;text-align:right}
-.service-panel-next{margin-top:14px;display:flex;justify-content:flex-end}
-.service-panel-book{padding:11px 14px;font-size:13px}
 .home-service-card{cursor:pointer}
 @media(max-width:760px){.service-detail-toggle{grid-template-columns:1fr;gap:12px;padding:20px}.service-detail-meta{justify-content:space-between;min-width:0;width:100%}.service-detail-cue{text-align:left}.service-detail-panel{padding:0 20px 20px}.service-detail-grid{grid-template-columns:1fr}.service-detail-main strong{font-size:28px}.service-detail-price{align-items:flex-start;flex-direction:column;gap:6px}.service-detail-price strong{text-align:left}.service-panel-next{justify-content:flex-start}.service-panel-book{width:100%}}
