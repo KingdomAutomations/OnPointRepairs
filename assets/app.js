@@ -21,14 +21,16 @@ $$('.faq-q').forEach((btn) => btn.addEventListener('click', () => btn.closest('.
 const year = $('[data-year]');
 if (year) year.textContent = new Date().getFullYear();
 const sticky = $('.sticky-call');
-if (sticky) {
-  const toggleSticky = () => sticky.classList.toggle('show', window.scrollY > 520);
-  window.addEventListener('scroll', toggleSticky, { passive: true });
-  toggleSticky();
-}
-const toggleNavCta = () => document.body.classList.toggle("show-nav-cta", window.scrollY > 520);
-window.addEventListener("scroll", toggleNavCta, { passive: true });
-toggleNavCta();
+const mobileViewport = window.matchMedia('(max-width: 1120px)');
+const updatePrimaryCtas = () => {
+  const pastFold = window.scrollY > 520;
+  const showSticky = pastFold && mobileViewport.matches;
+  if (sticky) sticky.classList.toggle('show', showSticky);
+  document.body.classList.toggle('show-nav-cta', pastFold && !mobileViewport.matches);
+};
+window.addEventListener('scroll', updatePrimaryCtas, { passive: true });
+mobileViewport.addEventListener('change', updatePrimaryCtas);
+updatePrimaryCtas();
 
 const calculators = [
   { root: $('#quoteCalc'), service: $('#serviceType'), urgent: $('#urgent'), address: $('#serviceAddress'), button: $('#checkDistance'), out: $('#quoteOut'), items: $('#quoteItems'), why: $('#whyBox'), result: $('#distanceResult') },
